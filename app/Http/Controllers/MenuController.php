@@ -7,7 +7,8 @@ use App\Models\Menu;
 use App\Models\Restock;
 use Illuminate\Http\Request;
 use App\Exports\MenuExport;
-use Maatwebsite\Excel\Facades\Excel;
+// use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class MenuController extends Controller
 {
@@ -23,10 +24,15 @@ class MenuController extends Controller
         return view('pages.manager.menu.index',compact('menu','kategori'));
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        $nama_file = 'laporan_stock_'.date('Y-m-d_H-i-s').'.xlsx';
-        return Excel::download(new MenuExport, $nama_file);
+        $input = $request->input('kategori');
+        // $nama_file = 'laporan_stock_'.date('Y-m-d_H-i-s').'.xlsx';
+        // return Excel::download(new MenuExport, $nama_file);
+        $menus = Menu::where('kategori_id',$input)->get();
+        // dd($menus);
+        $pdf = PDF::loadview('pages.manager.menu.report',compact('menus'));
+        return $pdf->download('Laporan_stock_'.date('Y-m-d_H-i-s').'.pdf');
     }
 
     /**

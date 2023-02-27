@@ -12,7 +12,8 @@
     <h2 class="text-lg font-medium mr-auto">Data Barang</h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
         {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
-        <a href="{{ route('reportStock') }}" class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false">
+        <a href="javascript:;" class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false" title="Add New" data-toggle="modal"
+            data-target="#add_report">
             <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Excel
         </a>
 
@@ -389,6 +390,45 @@
         <div class="modal-footer text-right">
             <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
             <button type="submit" class="btn btn-primary w-20">Send</button>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+<div id="add_report" data-backdrop="static" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <!-- BEGIN: Modal Header -->
+            <div class="modal-header">
+                <h2 class="font-medium text-base mr-auto">Print report product</h2>
+            </div> <!-- END: Modal Header -->
+
+            {{-- Form --}}
+            <form enctype="multipart/form-data" action="{{ route('reportStock') }}" method="GET">
+                @csrf
+                <!-- BEGIN: Modal Body -->
+                <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+
+                    <div class="col-span-6">
+                        <label for="modal-form-1" class="form-label">Kategori</label>
+                        <select id="kategori" class="select_user form-select" required name="kategori">
+                            <option disabled="true" selected="true">--- Pilih Kategori ---</option>
+                            @foreach ($kategori as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                            {{-- <option value="minuman">Minuman</option> --}}
+
+                        </select>
+                    </div>
+                    
+
+
+        </div> <!-- END: Modal Body -->
+
+        <!-- BEGIN: Modal Footer -->
+        <div class="modal-footer text-right">
+            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
+            <button type="submit" class="btn btn-primary w-20">print</button>
         </div>
         </form>
     </div>
