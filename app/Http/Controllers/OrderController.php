@@ -31,7 +31,6 @@ class OrderController extends Controller
 
     public function cetakInv($id)
     {
-        // dd($id);
         $order = Order::where('code_transaksi',$id)->get();
         $jumlahHarga = Order::where('code_transaksi',$id)->sum('jumlah_harga');
         $pdf = PDF::loadview('pages.user.history.invoice',compact('order','jumlahHarga'));

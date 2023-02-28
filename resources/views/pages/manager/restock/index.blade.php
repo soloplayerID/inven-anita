@@ -13,7 +13,7 @@
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
         <form method="POST" action="{{ route('reportBarangMasuk') }}" class="flex flex-row items-center">
             @csrf
-            Form
+            From
             <input id="modal-datepicker-1"
             class="datepicker form-control ml-3 mr-3" name="form" data-single-mode="true">
             To

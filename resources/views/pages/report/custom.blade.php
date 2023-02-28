@@ -16,7 +16,10 @@
           <?php
             $setting =  \App\Models\Setting::get()->first();
           ?>
-          <center><img src="{{ asset('fotoSetting/'.$setting->logo) }}" width="200px" height="100px"></center><br><br>Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, Kota Bekasi, 17431
+          <center>
+            <img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 300px" />
+          </center>
+          Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, Kota Bekasi, 17431
           <center><h5>{{$setting->name_application }}</h5></center>
           <h4 class="text-center">Laporan Pendapatan </h4>
           <div class="row mt-3">
@@ -45,7 +48,7 @@
                     </tr>
                     @endforeach
                     <tr>
-                        <th colspan="3">Total Pendapatan :</th>
+                        <th colspan="4">Total Pendapatan :</th>
                         <td>RP. {{ number_format( $totalPendapatan) }}</td>
 
                     </tr>

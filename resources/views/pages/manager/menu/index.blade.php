@@ -14,7 +14,7 @@
         {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
         <a href="javascript:;" class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false" title="Add New" data-toggle="modal"
             data-target="#add_report">
-            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Excel
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Stock
         </a>
 
         </a>

@@ -126,9 +126,8 @@
 				</tr>
 
 				<tr class="heading">
+					<th>no</th>
 				    <th>Nama</th>
-                    <th>Deskripsi</th>
-                    <th>harga</th>
                     <th>stock tersisa</th>
 				</tr>
 				@php
@@ -139,8 +138,6 @@
 				<tr class="item">
 				    <td style="text-align: center;">{{$no++}}</td>
                     <td style="text-align: center;">{{ $dt->name }}</td>
-                    <td style="text-align: center;">{{ $dt->deskripsi }}</td>
-                    <td style="text-align: center;">{{ $dt->harga }}</td>
                     <td style="text-align: center;">{{ $dt->stock }}</td>
 
 				</tr>

@@ -103,6 +103,12 @@ Route::middleware('auth')->group(function() {
 
     // kasir
     Route::get('/invoice/{id}',[CatatanController::class,'invoice'])->name('invoice');
+    Route::prefix('/order')->group(function () {
+        Route::get('/', [OrderController::class,'index'])->name('historyOrder');
+        Route::get('/invoice/{id}', [OrderController::class,'cetakInv'])->name('cetakInv');
+        Route::get('/destroyCode/{id}', [OrderController::class,'destroyCode'])->name('destroyCode');
+        Route::get('/laporanKasir',[OrderController::class,'laporanKasir'])->name('laporanKasir');
+    });
     Route::group(['middleware' => 'CheckRole:kasir'], function() {
         Route::resource('transaksi', App\Http\Controllers\TransaksiController::class);
         Route::put('addKeranjang/{id}',[KerajangContoller::class ,'store'])->name('addKeranjang');
@@ -112,12 +118,6 @@ Route::middleware('auth')->group(function() {
         // order
         Route::post('addOrder',[KerajangContoller::class,'addOrder'])->name('addOrder');
         //
-        Route::prefix('/order')->group(function () {
-            Route::get('/', [OrderController::class,'index'])->name('historyOrder');
-            Route::get('/invoice/{id}', [OrderController::class,'cetakInv'])->name('cetakInv');
-            Route::get('/destroyCode/{id}', [OrderController::class,'destroyCode'])->name('destroyCode');
-            Route::get('/laporanKasir',[OrderController::class,'laporanKasir'])->name('laporanKasir');
-        });
     });
 
 

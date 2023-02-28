@@ -37,7 +37,7 @@
                 </div>
             </div> --}}
             <a href="{{ route('cetakInv',$item->code_transaksi) }}" target="_blank"  class="tooltip btn btn-primary shadow-md mr-2" title="Laporan Transaksi Hari Ini">
-                print invoice
+                print invoicess
             </a>
 
         </div>

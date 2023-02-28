@@ -3,7 +3,7 @@
 {{ Breadcrumbs::render('customReport') }}
 @endsection
 @section('subhead')
-<title>Restock Menu</title>
+<title>Report</title>
 @endsection
 
 @section('subcontent')
