@@ -7,10 +7,11 @@
 		<style>
 			.invoice-box {
 				max-width: 800px;
-				margin: auto;
+				/* margin: auto; */
+				margin-left: 10px;
 				padding-left: 30px;
                 padding-right: 30px;
-                padding-bottom: 30px;
+                /* padding-bottom: 30px; */
 				border: 1px solid #eee;
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 				font-size: 16px;
@@ -106,25 +107,10 @@
 			$setting = \App\Models\Setting::find(1);
 		?>
 		<div class="invoice-box">
+			<center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 200px" /></center>
+			<center><span>{{$setting->name_application }}</span></center><br><pre >Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni<br> Kec. Pondok Melati, Kota Bekasi, 17431</pre>
+			Date: {{ \Carbon\Carbon::now()->setTimezone('Asia/Jakarta')->isoFormat('DD MMMM YYYY ') }} <center><span style="margin-bottom: 10px;">Laporan stock barang</span></center>
 			<table cellpadding="0" cellspacing="0">
-				<tr class="top">
-					<td colspan="4">
-						<table>
-							<tr>
-								<td>
-									@if ($setting->logo == null)
-
-									@else
-									<img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 300px" />
-									@endif
-									<br>{{$setting->name_application }}<br>Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, <br>Kota Bekasi, 17431
-
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-
 				<tr class="heading">
 					<th>no</th>
 				    <th>Nama</th>

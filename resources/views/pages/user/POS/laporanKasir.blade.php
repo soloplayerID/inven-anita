@@ -16,7 +16,8 @@
 <body>
     {{-- <div class="container">
     </div> --}}
-    <img src="{{ asset('fotoSetting/'.$setting->logo) }}" width="200px" height="100px"><br><h5>{{$setting->name_application }}</h5><br><p>Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 <br>Kel. Jatimurni Kec. Pondok Melati, Kota Bekasi, 17431</p>
+    <center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="max-width: 200px" /></center>
+          <center><p>{{$setting->name_application }}</p></center><br><pre >Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, <br>Kota Bekasi, 17431</pre>
     <h4 class="text-center">Laporan Barang Keluar </h4>
     <div class="row mt-3 mb-5">
         <div class="float-right">Total Transaksi : {{ $totalOrder }} </div>

@@ -15,10 +15,10 @@
             @csrf
             From
             <input id="modal-datepicker-1"
-            class="datepicker form-control ml-3 mr-3" name="form" data-single-mode="true">
+            class="datepicker form-control ml-3 mr-3" name="start" data-single-mode="true">
             To
             <input id="modal-datepicker-2"
-                                class="datepicker form-control ml-3" name="to" data-single-mode="true">
+                                class="datepicker form-control ml-3" name="end" data-single-mode="true">
 
             <button type="submit" class=" tooltip btn btn-primary shadow-md ml-2 " title="Generate Laporan">
                 <i class="w-5 h-5" data-feather="printer"></i>

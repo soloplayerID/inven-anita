@@ -8,17 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Laporan Pendapatan {{ \Carbon\Carbon::parse($startDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }} - {{ \Carbon\Carbon::parse($endDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }}</title>
+    <title>Laporan Pendapatan {{ \Carbon\Carbon::now()->setTimezone('Asia/Jakarta')->isoFormat(' MMMM YYYY ') }}</title>
   </head>
   <body>
+    <?php
+			$setting = \App\Models\Setting::find(1);
+		?>
       {{-- <div class="container">
     </div> --}}
     
-          <center><img src="{{ asset('fotoSetting/'.$setting->logo) }}" width="200px" height="100px"></center><br>
-          <center><h5>{{$setting->name_application }}</h5></center><br><pre >Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, <br>Kota Bekasi, 17431</pre>
-          <h4 class="text-center">Laporan Barang Masuk </h4>
+          <center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="max-width: 200px" /></center>
+          <center><p>{{$setting->name_application }}</p></center><br><pre >Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni Kec. Pondok Melati, <br>Kota Bekasi, 17431</pre>
+          <p class="text-center">Laporan Barang Masuk </p>
           <div class="row mt-3">
               {{-- <div class="float-right">Total Transaksi : {{ $totalOrder }}</div> --}}
+              <!-- <div class="float-left">Date : {{ \Carbon\Carbon::now()->setTimezone('Asia/Jakarta')->isoFormat(' MMMM YYYY ') }}</div> -->
               <div class="float-left">Date : {{ \Carbon\Carbon::parse($startDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }} - {{ \Carbon\Carbon::parse($endDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }}</div>
           </div>
           <div class="mt-5">

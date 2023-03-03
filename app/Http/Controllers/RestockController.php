@@ -127,11 +127,11 @@ class RestockController extends Controller
     public function report_barang_masuk(Request $request)
     {
         // $order = Order::where('code_transaksi',$id)->get();
-        $startDay_d = explode("-",Carbon::parse($request->form)->format('Y-m-d')) ;
-        $endDay_d = explode("-",Carbon::parse($request->to)->format('Y-m-d'));
-        $date = preg_replace('/\(.*\)$/', '', $request->form);
-        $startDay = explode(", ", $request->form)[1]."-".$startDay_d[1]."-".$startDay_d[2];
-        $endDay = explode(", ", $request->to)[1]."-".$endDay_d[1]."-".$endDay_d[2];
+        $startDay_d = explode("-",Carbon::parse($request->start)->format('Y-m-d')) ;
+        $endDay_d = explode("-",Carbon::parse($request->end)->format('Y-m-d'));
+        $date = preg_replace('/\(.*\)$/', '', $request->from);
+        $startDay = explode(", ", $request->start)[1]."-".$startDay_d[1]."-".$startDay_d[2];
+        $endDay = explode(", ", $request->end)[1]."-".$endDay_d[1]."-".$endDay_d[2];
         
         $restock = Restock::whereBetween('created_at', [$startDay. ' 00:00:00', $endDay. ' 23:59:59'])->get();
         $totalPengeluaran = $restock->sum('total_harga');

@@ -20,7 +20,7 @@
     <?php
             $setting =  \App\Models\Setting::get()->first();
           ?>
-          <center><img src="{{ asset('fotoSetting/'.$setting->logo) }}" width="200px" height="100px"></center><br>
+          <center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 300px" /></center><br>
           <center><h5>{{$setting->name_application }}</h5></center><br>Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 <br> Kel. Jatimurni Kec. Pondok Melati, Kota Bekasi, 17431
     <h4 class="text-center">Laporan Mutasi Barang</h4>
     <div class="row mt-3 mb-5">

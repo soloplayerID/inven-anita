@@ -71,7 +71,7 @@ Route::middleware('auth')->group(function() {
             });
             Route::prefix('/restockProduct')->group(function () {
                 Route::resource('restock', App\Http\Controllers\RestockController::class);
-                Route::post('/report_barang_masuk',[MenuController::class,'report_barang_masuk'])->name('reportBarangMasuk');
+                Route::post('/report_barang_masuk',[App\Http\Controllers\RestockController::class,'report_barang_masuk'])->name('reportBarangMasuk');
             });
             
             Route::get('/export-data', [App\Http\Controllers\MenuController::class, 'export'])->name('reportStock');
