@@ -20,9 +20,9 @@
     <?php
             $setting =  \App\Models\Setting::get()->first();
           ?>
-          <center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 300px" /></center><br>
-          <center><h5>{{$setting->name_application }}</h5></center>
-    <h4 class="text-center">Laporan Pendapatan </h4>
+          <center><img src="{{ public_path('/fotoSetting/'.$setting->logo) }}" style="width: 50%; max-width: 200px" /></center>
+			<center><span>{{$setting->name_application }}</span></center><br><pre >Jl. Raya Hankam Ujung Aspal RT 004/006 No. 428 Kel. Jatimurni<br> Kec. Pondok Melati, Kota Bekasi, 17431</pre>
+			Date: {{ \Carbon\Carbon::now()->setTimezone('Asia/Jakarta')->isoFormat('DD MMMM YYYY ') }} <center><span style="margin-bottom: 10px;">Laporan Pendapatan</span></center>
     <div class="row mt-3 mb-5">
         {{-- <div class="float-right">Total Transaksi : {{ $totalOrder }} </div> --}}
     <div class="float-left">Date :

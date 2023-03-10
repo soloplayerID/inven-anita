@@ -113,7 +113,8 @@
 			<table cellpadding="0" cellspacing="0">
 				<tr class="heading">
 					<th>no</th>
-				    <th>Nama</th>
+				    <th>Nama Product</th>
+					<th>Satuan</th>
                     <th>stock tersisa</th>
 				</tr>
 				@php
@@ -124,6 +125,7 @@
 				<tr class="item">
 				    <td style="text-align: center;">{{$no++}}</td>
                     <td style="text-align: center;">{{ $dt->name }}</td>
+					<td style="text-align: center;">{{ $dt->satuan }}</td>
                     <td style="text-align: center;">{{ $dt->stock }}</td>
 
 				</tr>
