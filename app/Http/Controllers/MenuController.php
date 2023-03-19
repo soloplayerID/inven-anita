@@ -19,7 +19,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::all();
+        $menu = Menu::all(); 
         $kategori = Kategori::all();
         return view('pages.manager.menu.index',compact('menu','kategori'));
     }
