@@ -11,13 +11,13 @@
 <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Data Kategori</h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-        {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
+        {{-- <button class="btn btn-primary shadow-md mr-2">Tambah kategori</button> --}}
         {{-- <button class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false">
-            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Excel
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Cetak Excel
         </button> --}}
 
         </a>
-        <a href="javascript:;" class="tooltip btn btn-primary shadow-md mr-2" title="Add New User" data-toggle="modal"
+        <a href="javascript:;" class="tooltip btn btn-primary shadow-md mr-2" title="Tambah Kategori" data-toggle="modal"
             data-target="#add_menu">
             <i class="w-4 h-4" data-feather="plus"></i>
         </a>
@@ -90,7 +90,7 @@
             </div>
             <div class="px-5 pb-8 text-center flex items-center justify-center">
 
-                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">batal</button>
                 <form action="{{ route('kategori.destroy',$delete->id) }}" method="post">
                     @csrf
                     @method('DELETE')
@@ -130,8 +130,8 @@
                 <!-- BEGIN: Modal Footer -->
                 <div class="modal-footer text-right">
                     <button type="button" data-dismiss="modal"
-                        class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
-                    <button type="submit" class="btn btn-primary w-20">Send</button>
+                        class="btn btn-outline-secondary w-20 mr-1">Batal</button>
+                    <button type="submit" class="btn btn-primary w-20">Kirim</button>
                 </div>
             </form>
         </div>
@@ -164,8 +164,8 @@
                 <!-- BEGIN: Modal Footer -->
                 <div class="modal-footer text-right">
                     <button type="button" data-dismiss="modal"
-                        class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
-                    <button type="submit" class="btn btn-primary w-20">Send</button>
+                        class="btn btn-outline-secondary w-20 mr-1">batal</button>
+                    <button type="submit" class="btn btn-primary w-20">Kirim</button>
                 </div>
             </form>
         </div>

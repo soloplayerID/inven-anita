@@ -53,40 +53,44 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->gambar == null) {
-            $menu = new Menu;
-            $menu->name = $request->name;
-            $menu->kategori_id = $request->kategori;
-            $menu->deskripsi = $request->deskripsi;
-            $menu->stock = $request->stock;
-            $menu->stok_awal = $request->stok_awal;
-            $menu->satuan = $request->satuan;
-            $menu->harga = $request->harga;
-            $menu->harga_beli = $request->harga_beli;
-            $menu->save();
+        if($request->harga <= $request->harga_beli){
+            return back()->with('warning','Harga jual kemurahan!!!');
         }else{
-            $gambar = $request->file('gambar');
-
-            $nama_foto = time() . "_" . $gambar->getClientOriginalName();
-
-            // isi dengan nama folder tempat kemana file diupload
-            $moved = 'fotoMenu';
-            $gambar->move($moved, $nama_foto);
-
-            $menu = new Menu;
-            $menu->name = $request->name;
-            $menu->kategori_id = $request->kategori;
-            $menu->deskripsi = $request->deskripsi;
-            $menu->stock = $request->stock;
-            $menu->stok_awal = $request->stok_awal;
-            $menu->satuan = $request->satuan;
-            $menu->harga = $request->harga;
-            $menu->harga_beli = $request->harga_beli;
-            $menu->gambar = $nama_foto;
-            $menu->save();
+            if ($request->gambar == null) {
+                $menu = new Menu;
+                $menu->name = $request->name;
+                $menu->kategori_id = $request->kategori;
+                $menu->deskripsi = $request->deskripsi;
+                $menu->stock = $request->stock;
+                $menu->stok_awal = $request->stok_awal;
+                $menu->satuan = $request->satuan;
+                $menu->harga = $request->harga;
+                $menu->harga_beli = $request->harga_beli;
+                $menu->save();
+            }else{
+                $gambar = $request->file('gambar');
+    
+                $nama_foto = time() . "_" . $gambar->getClientOriginalName();
+    
+                // isi dengan nama folder tempat kemana file diupload
+                $moved = 'fotoMenu';
+                $gambar->move($moved, $nama_foto);
+    
+                $menu = new Menu;
+                $menu->name = $request->name;
+                $menu->kategori_id = $request->kategori;
+                $menu->deskripsi = $request->deskripsi;
+                $menu->stock = $request->stock;
+                $menu->stok_awal = $request->stok_awal;
+                $menu->satuan = $request->satuan;
+                $menu->harga = $request->harga;
+                $menu->harga_beli = $request->harga_beli;
+                $menu->gambar = $nama_foto;
+                $menu->save();
+            }
+            Activity()->log('Tambah Product '.$menu->name);
+            return back()->with('success','Menu Berhasil Di Tambah');
         }
-        Activity()->log('Tambah Product '.$menu->name);
-        return back()->with('success','Menu Berhasil Di Tambah');
 
     }
 

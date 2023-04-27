@@ -37,11 +37,16 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        $kategori = new Kategori();
-        $kategori->name = $request->name;
-        $kategori->save();
-        Activity()->log('Tambah Kategori'.$request->name);
-        return back()->with('success','Kategori Berhasil Di Buat');
+        if (Kategori::where('name', '=', $request->name)->exists()) {
+            return back()->with('warning','Kategori Sudah Ada!!!');
+        } else {
+            // user found
+            $kategori = new Kategori();
+            $kategori->name = $request->name;
+            $kategori->save();
+            Activity()->log('Tambah Kategori'.$request->name);
+            return back()->with('success','Kategori Berhasil Di Buat');
+        }
     }
 
     /**

@@ -16,9 +16,9 @@
 <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Activity Log</h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-        {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
+        {{-- <button class="btn btn-primary shadow-md mr-2">Tambah akun baru</button> --}}
         {{-- <button class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false">
-            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Excel
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Ekpor ke Excel
         </button> --}}
 
     {{-- </a>
@@ -50,7 +50,7 @@
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Name User</th>
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Deskripsi</th>
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Time</th>
-                        {{-- <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Action</th> --}}
+                        {{-- <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Tindakan</th> --}}
                     </tr>
                 </thead>
                 <tbody>

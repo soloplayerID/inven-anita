@@ -44,7 +44,7 @@
                         <i data-feather="user-plus"></i>
                     </div>
                     <div class="side-menu__title">
-                        Add User
+                        Tambah Akun
                     </div>
                 </a>
             </li>
@@ -54,7 +54,7 @@
                         <i data-feather="settings"></i>
                     </div>
                     <div class="side-menu__title">
-                        Setting
+                        Pengaturan
                         <div class="side-menu__sub-icon">
                             <i data-feather="chevron-down"></i>
                         </div>
@@ -69,7 +69,7 @@
                                 <i data-feather="tool"></i>
                             </div>
                             <div class="side-menu__title">
-                                Setting Aplikasi
+                                Pengaturan Aplikasi
                             </div>
                         </a>
                     </li>
@@ -80,7 +80,7 @@
                                 <i data-feather="credit-card"></i>
                             </div>
                             <div class="side-menu__title">
-                               Setting Midtrans Key
+                               Pengaturan Midtrans Key
                             </div>
                         </a>
                     </li>
@@ -96,7 +96,7 @@
                         <i data-feather="box"></i>
                     </div>
                     <div class="side-menu__title">
-                        Master Product
+                        Master Produk
                         <div class="side-menu__sub-icon">
                             <i data-feather="chevron-down"></i>
                         </div>
@@ -111,7 +111,7 @@
                                 <i data-feather="database"></i>
                             </div>
                             <div class="side-menu__title">
-                                kategori Product
+                                kategori Produk
                             </div>
                         </a>
                     </li>
@@ -122,7 +122,7 @@
                                 <i data-feather="log-in"></i>
                             </div>
                             <div class="side-menu__title">
-                                Product
+                                Produk
                             </div>
                         </a>
                     </li>
@@ -133,7 +133,7 @@
                                 <i data-feather="log-out"></i>
                             </div>
                             <div class="side-menu__title">
-                                Product Masuk
+                                Produk Masuk
                             </div>
                         </a>
                     </li>
@@ -147,7 +147,7 @@
                         <i data-feather="user-plus"></i>
                     </div>
                     <div class="side-menu__title">
-                        Customer
+                        Pelanggan
                     </div>
                 </a>
             </li>--}}
@@ -158,7 +158,7 @@
                         <i data-feather="gift"></i>
                     </div>
                     <div class="side-menu__title">
-                        Supplier
+                        Suplier
                     </div>
                 </a>
             </li>
@@ -180,7 +180,7 @@
                         <i data-feather="printer"></i>
                     </div>
                     <div class="side-menu__title">
-                        Generate Report
+                        Cetak Laporan
                     </div>
                 </a>
             </li>
@@ -206,7 +206,7 @@
                         <i data-feather="activity"></i>
                     </div>
                     <div class="side-menu__title">
-                        Activity Log
+                        Cek Aktivitas
                     </div>
                 </a>
             </li>
@@ -221,7 +221,7 @@
                         <i data-feather="monitor"></i>
                     </div>
                     <div class="side-menu__title">
-                        Point Of Sale
+                        Aplikasi Penjualan
                     </div>
                 </a>
             </li>
@@ -232,7 +232,7 @@
                         <i data-feather="refresh-cw"></i>
                     </div>
                     <div class="side-menu__title">
-                        History Orders
+                        Riwayat pesanan
                     </div>
                 </a>
             </li>

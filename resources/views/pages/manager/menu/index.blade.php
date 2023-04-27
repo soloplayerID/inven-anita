@@ -3,18 +3,18 @@
 {{ Breadcrumbs::render('menu') }}
 @endsection
 @section('subhead')
-<title>Product Menu</title>
+<title>produk Menu</title>
 @endsection
 
 @section('subcontent')
-@include('sweetalert::alert')
+
 <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Data Barang</h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
         {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
         <a href="javascript:;" class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false" title="Add New" data-toggle="modal"
             data-target="#add_report">
-            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export Stock
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Cetak Stock
         </a>
 
         </a>
@@ -43,12 +43,12 @@
                 <thead>
                     <tr>
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap text-center ">No</th>
-                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Nama Product</th>
-                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap text-center">Stock</th>
+                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Nama Produk</th>
+                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap text-center">Stok</th>
                         <!--<th class="border border-b-2 dark:border-dark-5 whitespace-nowrap text-center">Stock Awal</th>-->
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap text-center">Satuan</th>
                         <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Harga</th>
-                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Action</th>
+                        <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Tindakan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -167,7 +167,7 @@
 
             <!-- BEGIN: Modal Footer -->
             <div class="modal-footer text-right">
-                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
+                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
 
             </div>
 
@@ -231,7 +231,7 @@
                     </div>
 
                     <div class="col-span-6">
-                        <label for="crud-form-3" class="form-label">Quantity / Stock</label>
+                        <label for="crud-form-3" class="form-label">kuantiti / Stok</label>
                         <div class="input-group">
                             <input id="stock" name="stock" type="number" class="form-control" value="{{ $item->stock }}"
                                 placeholder="Quantity" aria-describedby="input-group-1">
@@ -265,8 +265,8 @@
 
         <!-- BEGIN: Modal Footer -->
         <div class="modal-footer text-right">
-            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
-            <button type="submit" class="btn btn-primary w-20">Send</button>
+            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
+            <button type="submit" class="btn btn-primary w-20">Kirim</button>
         </div>
         </form>
     </div>
@@ -281,14 +281,13 @@
             <div class="modal-body p-0">
                 <div class="p-5 text-center"> <i data-feather="x-circle"
                         class="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                    <div class="text-3xl mt-5">Are you sure?</div>
-                    <div class="text-gray-600 mt-2">Do you really want to delete these records? <br>This process cannot
-                        be undone.</div>
+                    <div class="text-3xl mt-5">Apa kamu yakin?</div>
+                    <div class="text-gray-600 mt-2">Kamu yakin untuk menghapus? <br>proses tidak bisa dikembalikan.</div>
                 </div>
                 <div class="px-5 pb-8 text-center flex items-center justify-center">
 
                     <button type="button" data-dismiss="modal"
-                        class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                        class="btn btn-outline-secondary w-24 mr-1">Batal</button>
                     <form action="{{ route('menu.destroy',$deletemenu->id) }}" method="post">
                         @csrf
                         @method('DELETE')
@@ -378,7 +377,7 @@
                     </div>
 
                     {{-- <div class="col-span-6">
-                        <label for="modal-form-1" class="form-label">Code Pembayaran</label>
+                        <label for="modal-form-1" class="form-label">Kode Pembayaran</label>
                         <input name="code" id="modal-form-1" type="text" readonly value="{{ $code }}"
                     class="form-control" placeholder="inputkan code">
                 </div> --}}
@@ -388,8 +387,8 @@
 
         <!-- BEGIN: Modal Footer -->
         <div class="modal-footer text-right">
-            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
-            <button type="submit" class="btn btn-primary w-20">Send</button>
+            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
+            <button type="submit" class="btn btn-primary w-20">Kirim</button>
         </div>
         </form>
     </div>
@@ -400,7 +399,7 @@
         <div class="modal-content">
             <!-- BEGIN: Modal Header -->
             <div class="modal-header">
-                <h2 class="font-medium text-base mr-auto">Print report product</h2>
+                <h2 class="font-medium text-base mr-auto">Cetak laporan produk</h2>
             </div> <!-- END: Modal Header -->
 
             {{-- Form --}}
@@ -427,11 +426,12 @@
 
         <!-- BEGIN: Modal Footer -->
         <div class="modal-footer text-right">
-            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Cancel</button>
+            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
             <button type="submit" class="btn btn-primary w-20">print</button>
         </div>
         </form>
     </div>
 </div>
 </div>
+@include('sweetalert::alert')
 @endsection
