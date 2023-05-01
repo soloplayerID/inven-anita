@@ -12,6 +12,31 @@
     <h2 class="text-lg font-medium mr-auto">Data Barang</h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
         {{-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> --}}
+         <form action="{{ route('menu.index') }}" method="GET" role="search">
+
+                    <div class="input-group">
+                        <span class="input-group-btn mr-2">
+                            <button class="btn btn-info" type="submit" title="Search projects">
+                                <span data-feather="search"></span>
+                            </button>
+                        </span>
+                         <select id="kategori" class="mr-2 form-select" required name="term" id="term">
+                            <option disabled="true" selected="true">--- Pilih Kategori ---</option>
+                            @foreach ($kategori as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+
+                        </select>
+                        <a href="{{ route('menu.index') }}" class="mr-5 mt-1">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button" title="search">
+                                    <span data-feather="refresh-cw"></span>
+                                </button>
+                            </span>
+                        </a>
+                    </div>
+                </form>
+       
         <a href="javascript:;" class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto mr-2" aria-expanded="false" title="Add New" data-toggle="modal"
             data-target="#add_report">
             <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Cetak Stock

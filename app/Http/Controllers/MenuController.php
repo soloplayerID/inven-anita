@@ -17,11 +17,17 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $menu = Menu::all(); 
-        $kategori = Kategori::all();
-        return view('pages.manager.menu.index',compact('menu','kategori'));
+        if($request->term != null) {
+            $menu = Menu::where('kategori_id',$request->term)->get();
+            $kategori = Kategori::all();
+            return view('pages.manager.menu.index',compact('menu','kategori'));
+        }else{
+            $menu = Menu::all(); 
+            $kategori = Kategori::all();
+            return view('pages.manager.menu.index',compact('menu','kategori'));
+        }
     }
 
     public function export(Request $request)
