@@ -12,6 +12,11 @@
 
     <title>Laporan Pendapatan - {{ \Carbon\Carbon::now()->setTimezone('Asia/Jakarta')->isoFormat(' MMMM YYYY ') }}
     </title>
+    <style>
+      .margin-top {
+				margin-top: 100px;
+			}
+    </style>
 </head>
 
 <body>
@@ -57,6 +62,7 @@
         </table>
 
     </div>
+    <p class="margin-top">Mengetahui <br><br><br><br>{{ Auth::user()->name }}</p>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -8,6 +8,11 @@
 @endsection
 @section('subhead')
     <title>Invoice</title>
+    <style>
+      .margin-top {
+				margin-top: 100px;
+			}
+    </style>
 @endsection
 
 @section('subcontent')
@@ -127,5 +132,6 @@
             </div>
         </div>
     </div>
+    <p class="margin-top">Mengetahui <br><br><br><br>{{ Auth::user()->name }}</p>
     <!-- END: Invoice -->
 @endsection

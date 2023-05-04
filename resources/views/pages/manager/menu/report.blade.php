@@ -99,6 +99,9 @@
 			.invoice-box.rtl table tr td:nth-child(3) {
 				text-align: left;
 			}
+			.margin-top {
+				margin-top: 100px;
+			}
 		</style>
 	</head>
 
@@ -132,5 +135,6 @@
                 @endforeach
 			</table>
 		</div>
+		<p class="margin-top">Mengetahui <br><br><br><br>{{ Auth::user()->name }}</p>
 	</body>
 </html>

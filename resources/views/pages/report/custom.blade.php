@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <title>Laporan Pendapatan {{ \Carbon\Carbon::parse($startDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }} - {{ \Carbon\Carbon::parse($endDay)->setTimezone('Asia/Jakarta')->isoFormat('D MMMM YYYY ') }}</title>
+    <style>
+      .margin-top {
+				margin-top: 100px;
+			}
+    </style>
   </head>
   <body>
       {{-- <div class="container">
@@ -55,6 +60,7 @@
                 </tbody>
               </table>
           </div>
+          <p class="margin-top">Mengetahui <br><br><br><br>{{ Auth::user()->name }}</p>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
